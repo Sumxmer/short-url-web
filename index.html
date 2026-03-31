@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Short URL</title>
+</head>
+<body>
+    <h1>Short URL</h1>
+    <form action="/shorten" method="POST">
+        <input type="text" name="url" placeholder="กรอก URL ของคุณ" size="50">
+        <button type="submit">สร้าง Short URL</button>
+    </form>
+    <ul>
+        {{range $code, $url := .}}
+            <li><a href="/r/{{$code}}">http://localhost:8080/r/{{$code}}</a> → {{$url}}</li>
+        {{end}}
+    </ul>
+</body>
+</html>
